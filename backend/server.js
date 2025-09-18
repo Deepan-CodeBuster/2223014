@@ -17,7 +17,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/urlshortener';
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://2223014-frontend.vercel.app' }));
 
 // pino-http middleware attaches req.log and logs requests + responses
 app.use(pinoHttp({ logger }));
