@@ -4,7 +4,6 @@ import axios from "axios";
 import logger, { withLogging } from "../logger";
 
 const API_BASE = process.env.REACT_APP_API_BASE;
-console.log(API_BASE);
 
 function StatsPage() {
   const [shortcode, setShortcode] = useState("");
