@@ -3,7 +3,8 @@ import { TextField, Button, Paper, Typography } from "@mui/material";
 import axios from "axios";
 import logger, { withLogging } from "../logger";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_API_BASE;
+console.log(API_BASE);
 
 function StatsPage() {
   const [shortcode, setShortcode] = useState("");
@@ -23,7 +24,7 @@ function StatsPage() {
         onChange={(e) => setShortcode(e.target.value)}
         sx={{ mr: 2 }}
       />
-      {/* <Button variant="contained" onClick={fetchStats}>Get Stats</Button> */}
+      <Button variant="contained" onClick={fetchStats}>Get Stats</Button>
 
       {stats && (
         <div style={{ marginTop: 20 }}>

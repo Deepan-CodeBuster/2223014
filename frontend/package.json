@@ -11,6 +11,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
     "pino": "^9.10.0",
     "pino-pretty": "^13.1.1",
     "react": "^19.1.1",
