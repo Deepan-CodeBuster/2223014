@@ -1,4 +1,3 @@
-// routes/shortener.js
 const express = require('express');
 const router = express.Router();
 const validUrl = require('valid-url');
@@ -13,9 +12,7 @@ function computeExpireAt(minutes) {
   return new Date(Date.now() + m * 60000);
 }
 
-/**
- * POST /api/shorturls
- */
+//Post Method
 router.post('/shorturls', async (req, res, next) => {
   const { url, validity, shortcode } = req.body;
   const log = req.log;
@@ -67,10 +64,8 @@ router.post('/shorturls', async (req, res, next) => {
   }
 });
 
-/**
- * Redirect Route: GET /:shortcode
- * Logs click + redirects
- */
+//Redirect Method
+
 router.get('/:shortcode', async (req, res, next) => {
   const { shortcode } = req.params;
 
@@ -107,9 +102,7 @@ router.get('/:shortcode', async (req, res, next) => {
   }
 });
 
-/**
- * Stats Route: GET /shorturls/:shortcode
- */
+//Get Method
 router.get('/shorturls/:shortcode', async (req, res, next) => {
   const { shortcode } = req.params;
 
