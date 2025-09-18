@@ -67,7 +67,7 @@ The frontend is built in **React (Material UI)** and consumes the backend APIs w
 
 ### 1. Shorten a URL
 
-**POST** `/api/shorturls`
+**POST** `https://2223014.vercel.app/shorturls`
 
 **Request Body**:
 
@@ -92,7 +92,7 @@ The frontend is built in **React (Material UI)** and consumes the backend APIs w
 
 ### 2. Retrieve Short URL Statistics
 
-**GET** `/api/shorturls/:shortcode`
+**GET** `https://2223014.vercel.app/shorturls/:shortcode`
 
 **Response (200)**:
 
@@ -117,7 +117,7 @@ The frontend is built in **React (Material UI)** and consumes the backend APIs w
 
 ### 3. Redirect Short URL
 
-**GET** `/api/:shortcode`
+**GET** `https://2223014.vercel.app/shorturls/:shortcode`
 
 Redirects to the original URL if valid and not expired.
 
@@ -146,6 +146,59 @@ npm start
 Runs on: `http://localhost:3000`
 
 ---
+## .env is required for backend
+```bash
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/urlshortener
+BASE_URL=http://localhost:5000
+LOG_LEVEL=info
+NODE_ENV=development
+```
+## File Tree
+Affordmed/
+├─ backend/
+│  ├─ models/
+│  │  └─ Url.js
+│  ├─ routes/
+│  │  └─ shortener.js
+│  ├─ utils/
+│  │  └─ shortcode.js
+│  ├─ .env
+│  ├─ .gitignore
+│  ├─ logger.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ server.js
+│  └─ vercel.json
+├─ frontend/
+│  ├─ public/
+│  │  ├─ favicon.ico
+│  │  ├─ index.html
+│  │  ├─ logo192.png
+│  │  ├─ logo512.png
+│  │  ├─ manifest.json
+│  │  └─ robots.txt
+│  ├─ src/
+│  │  ├─ pages/
+│  │  │  ├─ ShortenerPage.js
+│  │  │  └─ StatsPage.js
+│  │  ├─ App.css
+│  │  ├─ App.js
+│  │  ├─ App.test.js
+│  │  ├─ index.css
+│  │  ├─ index.js
+│  │  ├─ logger.js
+│  │  ├─ logo.svg
+│  │  ├─ reportWebVitals.js
+│  │  └─ setupTests.js
+│  ├─ .env
+│  ├─ .gitignore
+│  ├─ package-lock.json
+│  ├─ package.json
+│  └─ vercel.json
+└─ README.md
+
+
 
 ## Logging
 
