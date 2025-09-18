@@ -3,7 +3,7 @@ import { TextField, Button, Grid, Paper, Typography } from "@mui/material";
 import axios from "axios";
 import logger, { withLogging } from "../logger";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 function ShortenerPage() {
   const [urls, setUrls] = useState([{ url: "", validity: "", shortcode: "" }]);
